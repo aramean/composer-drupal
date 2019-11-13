@@ -1,0 +1,67 @@
+{
+    "name": "application/d7-composer",
+    "description": "A composer project for Drupal 7",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/7"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "drupal-composer/preserve-paths": "0.1.*",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/drupal": "7.*",
+    },
+    "require-dev": {
+        "geerlingguy/drupal-vm": "3.1.*",
+        "drupal/devel": "^1.7",
+        "drupal/registry_rebuild": "^2.5"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "conflict": {
+        "drupal/core": "8.*"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "rm README.md LICENSE .travis.yml phpunit.xml.dist"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "web/": [
+                "type:drupal-core"
+            ],
+            "sites/all/modules/{$name}/": [
+                "type:drupal-module",
+                "vendor:drupal"
+            ],
+            "sites/all/themes/{$name}/": [
+                "type:drupal-theme"
+            ],
+            "sites/all/libraries/{$name}/": [
+                "type:drupal-library"
+            ],
+            "sites/all/drush/{$name}/": [
+                "type:drupal-drush"
+            ],
+            "profiles/{$name}/": [
+                "type:drupal-profile"
+            ]
+        },
+        "preserve-paths": [
+            "sites/all/modules",
+            "sites/all/themes",
+            "sites/all/libraries",
+            "sites/all/drush",
+            "sites/default/settings.php",
+            "sites/default/settings.local.php",
+            "sites/default/files"
+        ],
+        "patches": {}
+    }
+}
