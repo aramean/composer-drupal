@@ -1,5 +1,5 @@
 {
-    "name": "application/d7-composer",
+    "name": "drupal-composer/drupal-project",
     "description": "A composer project for Drupal 7",
     "repositories": [
         {
