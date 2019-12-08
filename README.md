@@ -2,8 +2,7 @@
 
 Composer file for Drupal 7.
 
-
-Example modules:
+#### Example modules that can be included in "require":
 
         "drupal/admin_views": "^1.6",
         "drupal/ajax_comments": "^1.3",
@@ -58,3 +57,40 @@ Example modules:
         "drupal/views_bulk_operations": "^3.5",
         "drupal/views_conditional": "^1.3",
         "drupal/views_send": "^1.6"
+ 
+#### Example repositories that can be included in "repositories":
+```
+"fontawesome/free": {
+            "type": "package",
+            "package": {
+                "name": "fontawesome/free",
+                "version": "5.11.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fontawesome"
+                },
+                "dist": {
+                    "url": "https://use.fontawesome.com/releases/v5.11.2/fontawesome-free-5.11.2-web.zip",
+                    "type": "zip"
+                }
+            }
+}
+```
+
+```
+"hammerjs/jquery.hammer": {
+            "type": "package",
+            "package": {
+                "name": "hammerjs/jquery.hammer",
+                "version": "2.0.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.hammer"
+                },
+                "dist": {
+                    "url": "https://github.com/hammerjs/jquery.hammer.js/archive/2.0.0.zip",
+                    "type": "zip"
+                }
+            }
+}
+```
