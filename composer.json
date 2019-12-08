@@ -1,6 +1,6 @@
 {
     "name": "drupal-composer/drupal-project",
-    "description": "A composer project for Drupal 7",
+    "description": "Project template for Drupal 7 projects with composer",
     "repositories": [
         {
             "type": "composer",
