@@ -1,12 +1,12 @@
 {
     "name": "drupal-composer/drupal-project",
     "description": "Project template for Drupal 7 projects with composer",
-    "repositories": {
-        "drupal": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/7"
         }
-    },
+    ],
     "require": {
         "composer/installers": "^1.2",
         "drupal-composer/preserve-paths": "0.1.*",
