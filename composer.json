@@ -13,13 +13,18 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/drupal": "7.*",
     },
-    "require-dev": {
+        "require-dev": {
         "geerlingguy/drupal-vm": "3.1.*",
         "drupal/devel": "^1.7",
-        "drupal/registry_rebuild": "^2.5"
+        "drupal/hacked": "^2.0",
+        "drupal/module_missing_message_fixer": "^1.8",
+        "drupal/registry_rebuild": "^2.5",
+        "drupal/simpletest-simpletest": "^2.1",
+        "drupal/unused_modules": "^1.6"
     },
     "config": {
-        "vendor-dir": "vendor"
+        "sort-packages": true,
+        "vendor-dir": "sites/all/vendor"
     },
     "conflict": {
         "drupal/core": "8.*"
@@ -33,12 +38,11 @@
     "prefer-stable": true,
     "extra": {
         "installer-paths": {
-            "web/": [
+            "web": [
                 "type:drupal-core"
             ],
             "sites/all/modules/{$name}/": [
-                "type:drupal-module",
-                "vendor:drupal"
+                "type:drupal-module"
             ],
             "sites/all/themes/{$name}/": [
                 "type:drupal-theme"
@@ -49,18 +53,13 @@
             "sites/all/drush/{$name}/": [
                 "type:drupal-drush"
             ],
-            "profiles/{$name}/": [
+            "sites/profiles/{$name}/": [
                 "type:drupal-profile"
             ]
         },
         "preserve-paths": [
-            "sites/all/modules",
-            "sites/all/themes",
-            "sites/all/libraries",
-            "sites/all/drush",
             "sites/default/settings.php",
-            "sites/default/settings.local.php",
-            "sites/default/files"
+            "web/sites/default/settings.php"
         ],
         "patches": {}
     }
